@@ -1,8 +1,16 @@
 name: "Failed Workflow Commenter"
 description: "Let's the PR author know that CI failed by adding a comment and telling them how to fix it"
 inputs:
+  PACKAGE_MANAGER:
+    description: "The package manager used in the project"
+    required: false
+    default: "npm"
   FIXES:
     description: "A JSON object mapping failed job names to a npm script how to fix them"
+    required: false
+    default: "{}"
+  AUTO_FIX:
+    description: "A JSON object with the job names and the workflow file that fixes them"
     required: false
     default: "{}"
 runs:
